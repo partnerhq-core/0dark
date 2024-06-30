@@ -7,8 +7,8 @@ Airtable.configure({
 })
 
 const base = Airtable.base('appdloVj67m4T5LHN')
-export const Partners = base('Partners')
 export const Vendors = base('Vendors')
+export const Dark = base('Dark Consulting')
 
 const crm = Airtable.base('appyOs9GWzOZqnGIf')
 export const Bounties = crm('Bounties')

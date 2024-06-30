@@ -2,6 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import * as z from 'zod'
 
 import { Button } from '@/components/ui/button'
@@ -15,10 +16,9 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { cn } from '@/lib/utils'
+import { Dark } from '@/lib/airtable'
 
 interface IProps {
   setOpen: (open: boolean) => void
@@ -46,18 +46,34 @@ enum Service {
 export function ContactForm({ setOpen }: IProps) {
   const form = useForm<FormData>({
     defaultValues: {
-      contact: '+1 760 583 5578',
-      competitor: 'https://cabal.com',
-      services: [Service.Other],
-      budget: '50000',
+      contact: '',
+      competitor: '',
+      services: [],
+      budget: '',
       additional: '',
     },
     resolver: zodResolver(Schema),
   })
   async function submit(values: FormData) {
-    await new Promise(res => setTimeout(res, 2000))
-    // todo: send data to airtable
-    return true
+    try {
+      await Dark.create([
+        {
+          fields: {
+            Contact: values.contact,
+            Competitors: values.competitor,
+            Services: values.services.join(', '),
+            Budget: values.budget,
+            Notes: values.additional,
+          },
+        },
+      ])
+      setOpen(false)
+      toast.success('Request submitted. We will be in touch within 24 hours.')
+      return true
+    } catch (err) {
+      toast.error('Failed to submit request. Try again later.')
+      return false
+    }
   }
 
   return (
@@ -92,7 +108,7 @@ export function ContactForm({ setOpen }: IProps) {
             name="competitor"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>What is your competitors' websites?</FormLabel>
+                <FormLabel>What are your competitors' websites?</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="https://google.com, https://apple.com"
