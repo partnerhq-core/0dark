@@ -86,7 +86,7 @@ export function ContactForm({ setOpen }: IProps) {
       >
         <fieldset
           disabled={form.formState.isSubmitting}
-          className="space-y-6 pb-8"
+          className="space-y-6"
         >
           <FormField
             name="contact"
@@ -118,8 +118,7 @@ export function ContactForm({ setOpen }: IProps) {
                 </FormControl>
                 <FormMessage />
                 <FormDescription className="-mt-0.5 text-neutral-500">
-                  List all the competitors you are interesting in acquiring
-                  secrets from separated by commas.
+                  List all the competitors you are interested in separated by commas.
                 </FormDescription>
               </FormItem>
             )}
@@ -130,7 +129,7 @@ export function ContactForm({ setOpen }: IProps) {
               <FormItem>
                 <FormLabel>What services are you interested in?</FormLabel>
                 <FormControl>
-                  <div className="mt-2 grid gap-3">
+                  <div className="mt-2 grid gap-2">
                     {Object.entries(Service).map(([key, value]) => (
                       <div
                         id={key}
@@ -196,17 +195,13 @@ export function ContactForm({ setOpen }: IProps) {
               </FormItem>
             )}
           />
-          <div className="fixed left-0 bottom-0 h-12 w-full">
-            <div className="px-6 py-4 bg-neutral-900">
-              <Button
-                variant="outline"
-                type="submit"
-                className="w-full text-neutral-100 text-sm border-neutral-100 bg-neutral-900"
-              >
-                Submit
-              </Button>
-            </div>
-          </div>
+          <Button
+            variant="outline"
+            type="submit"
+            className="w-full text-neutral-100 text-sm border-neutral-100 bg-neutral-900"
+          >
+            Submit
+          </Button>
         </fieldset>
       </form>
     </Form>
