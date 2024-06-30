@@ -13,6 +13,7 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer'
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 import {
   Dialog,
@@ -67,9 +68,9 @@ export function Action() {
               {description}
             </DrawerDescription>
           </DrawerHeader>
-          <div className="mb-6 px-6 py-6">
+          <ScrollArea className="mb-6 px-6 py-6 h-full overflow-y-scroll">
             <ContactForm setOpen={setOpen} />
-          </div>
+          </ScrollArea>
         </DrawerContent>
       </Drawer>
     )
