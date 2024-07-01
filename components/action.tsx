@@ -12,7 +12,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer'
-import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
 import {

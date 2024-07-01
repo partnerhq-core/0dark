@@ -99,11 +99,11 @@ export function ContactForm({ setOpen }: IProps) {
                   We use{' '}
                   <LinkPreview
                     url="https://signal.org/download/"
-                    className="underline underline-offset-2 text-neutral-900"
+                    className="underline underline-offset-2 text-neutral-400"
                   >
                     Signal
                   </LinkPreview>{' '}
-                  to communicate with you over an encrypted channel.
+                  to communicate over an encrypted channel.
                 </FormDescription>
               </FormItem>
             )}
@@ -204,6 +204,7 @@ export function ContactForm({ setOpen }: IProps) {
             borderRadius="0.5rem"
             containerClassName="w-full"
             className="rounded-lg bg-neutral-800 text-neutral-100 border-2 border-neutral-800"
+            type="submit"
           >
             Submit
           </Button>

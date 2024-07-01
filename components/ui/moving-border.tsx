@@ -56,8 +56,7 @@ export function Button({
         </MovingBorder>
       </div>
 
-      <button
-        type="submit"
+      <div
         className={cn(
           'relative bg-neutral-900 p-3 py-2 border border-neutral-200 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased',
           'hover:animate-shimmer hover:bg-[linear-gradient(110deg,#262626,45%,#404040,55%,#262626)] bg-[length:200%_100%] transition-colors',
@@ -68,7 +67,7 @@ export function Button({
         }}
       >
         {children}
-      </button>
+      </div>
     </Component>
   )
 }
