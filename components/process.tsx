@@ -56,8 +56,8 @@ const STEPS = [
     badge: '30 minutes',
     description: (
       <p>
-        We will coordinate with you over Signal to schedule a call to identify
-        your needs as a business.
+        A call will be schedule to identify your needs as a business.
+        Coordination will through Signal an encrypted communication channel.
       </p>
     ),
   },
@@ -65,7 +65,7 @@ const STEPS = [
     title: 'Review Proposal',
     description: (
       <p>
-        We will present you a proposal with scope of work, estimated timeline,
+        A proposal will be presented with scope of work, estimated timeline,
         price, and payment schedule for you to review.
       </p>
     ),
@@ -75,8 +75,8 @@ const STEPS = [
     title: 'Pay Deposit',
     description: (
       <p>
-        Deposit will be paid over ACH, wire, or crypto. No work will be started
-        until the proposal's deposit has been collected.
+        The deposit will be paid over ACH, wire, or crypto. No work will be
+        started until the proposal's deposit has been collected.
       </p>
     ),
     badge: '1-3 days',
