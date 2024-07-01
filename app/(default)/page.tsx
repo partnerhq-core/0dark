@@ -1,8 +1,11 @@
 import { IconHome, IconMessage, IconUser } from '@tabler/icons-react'
 import React from 'react'
 
+import { AboutUs } from '@/components/about-us'
+import { ActionBlock } from '@/components/action-block'
 import { Hero } from '@/components/hero'
-import { Process } from '@/components/how-it-works'
+import { Process } from '@/components/process'
+import { Services } from '@/components/services'
 import { FloatingNav } from '@/components/ui/floating-navbar'
 
 const navItems = [
@@ -28,7 +31,12 @@ export default function Home() {
     <div>
       {/*<FloatingNav navItems={navItems} />*/}
       <Hero />
-      {/*<Process />*/}
+      <AboutUs />
+      {/*<ActionBlock />*/}
+      <Services />
+      <ActionBlock />
+      <Process />
+      <ActionBlock />
     </div>
   )
 }

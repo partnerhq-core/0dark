@@ -22,7 +22,7 @@ export function Hero() {
             duration: 0.8,
             ease: 'easeInOut',
           }}
-          className="from-neutral-300 to-neutral-500 bg-clip-text gap-y-6 flex flex-col justify-self-center max-w-2xl mx-auto"
+          className="from-neutral-300 to-neutral-500 bg-clip-text gap-y-6 flex flex-col justify-self-center max-w-2xl text-center mx-auto"
         >
           <div className="mb-4 flex justify-start w-full">
             <Image
@@ -38,11 +38,11 @@ export function Hero() {
             </span>{' '}
             for you.
           </div>
-          <div className="text-xl font-semibold tracking-normal text-neutral-500 grid gap-3 mx-auto">
-            Beat the competition by acquiring codebases, data sets, or insider
-            knowledge anonymously.
-          </div>
-          <div className="mt-2 flex justify-self-start items-center gap-y-3 gap-x-4">
+          {/*<div className="text-xl font-semibold tracking-normal text-neutral-500 grid gap-3 mx-auto">*/}
+          {/*  Beat the competition by acquiring codebases, data sets, or insider*/}
+          {/*  knowledge anonymously.*/}
+          {/*</div>*/}
+          <div className="mt-2 flex flex-col justify-self-start items-center gap-y-3 gap-x-4 mx-auto">
             <Action />
             <div className="text-neutral-500 text-xs font-semibold tracking-normal">
               Min Contract: $25,000
@@ -53,7 +53,7 @@ export function Hero() {
     )
   } else {
     return (
-      <div className="flex items-center h-screen pt-32">
+      <div className="flex items-center h-[calc(100vh-20px)] pt-32">
         <div className="max-w-7xl px-6 w-full mx-auto grid grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="col-span-2 max-w-2xl flex items-center h-full">
             <div className="grid gap-y-8 items-center -mt-24">
@@ -67,10 +67,10 @@ export function Hero() {
                 </span>{' '}
                 for you.
               </div>
-              <div className="text-xl font-semibold tracking-normal text-neutral-500 grid gap-3">
-                Beat the competition by acquiring codebases, data sets, or
-                insider knowledge anonymously.
-              </div>
+              {/*<div className="text-xl font-semibold tracking-normal text-neutral-500 grid gap-3">*/}
+              {/*  Beat the competition by acquiring codebases, data sets, or*/}
+              {/*  insider knowledge anonymously.*/}
+              {/*</div>*/}
               <div className="mt-2 flex justify-self-start items-center gap-y-3 gap-x-4">
                 <Action />
                 <div className="text-neutral-500 text-xs font-semibold tracking-normal">
