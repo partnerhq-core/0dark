@@ -3,6 +3,9 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    domains: [
+      'api.microlink.io', // Microlink Image Preview
+    ],
   },
 }
 

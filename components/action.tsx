@@ -23,6 +23,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from './ui/dialog'
+import { Button } from './ui/moving-border'
 
 export function Action() {
   const [open, setOpen] = useState(false)
@@ -30,13 +31,12 @@ export function Action() {
   const title = 'Submit a Request'
   const description = '0 Dark: Corporate espionage as a service'
   const trigger = (
-    <HoverBorderGradient
-      containerClassName="rounded-lg"
-      as="button"
-      className="rounded-lg bg-neutral-900 text-neutral-100 flex items-center space-x-2"
+    <Button
+      borderRadius="0.5rem"
+      className="rounded-lg bg-neutral-800 text-neutral-100 border-2 border-neutral-800"
     >
       Submit a Request
-    </HoverBorderGradient>
+    </Button>
   )
   if (isDesktop) {
     return (

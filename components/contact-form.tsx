@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import * as z from 'zod'
 
-import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {
   Form,
@@ -17,6 +16,8 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { LinkPreview } from '@/components/ui/link-preview'
+import { Button } from '@/components/ui/moving-border'
 import { Textarea } from '@/components/ui/textarea'
 import { Dark } from '@/lib/airtable'
 
@@ -39,7 +40,7 @@ type FormData = z.infer<typeof Schema>
 enum Service {
   'Acquiring proprietary codebase' = 'CODEBASE',
   'Acquiring proprietary data set' = 'DATASET',
-  'Obtaining insider secrets with expert call' = 'EXPERT_CALL',
+  'Obtaining insider knowledge with expert call' = 'EXPERT_CALL',
   Other = 'OTHER',
 }
 
@@ -84,10 +85,7 @@ export function ContactForm({ setOpen }: IProps) {
           if (success) setOpen(false)
         })}
       >
-        <fieldset
-          disabled={form.formState.isSubmitting}
-          className="space-y-6"
-        >
+        <fieldset disabled={form.formState.isSubmitting} className="space-y-6">
           <FormField
             name="contact"
             render={({ field }) => (
@@ -98,8 +96,14 @@ export function ContactForm({ setOpen }: IProps) {
                 </FormControl>
                 <FormMessage />
                 <FormDescription className="-mt-0.5 text-neutral-500">
-                  We prefer to use Signal to communicate with you over an
-                  encrypted channel.
+                  We use{' '}
+                  <LinkPreview
+                    url="https://signal.org/download/"
+                    className="underline underline-offset-2 text-neutral-900"
+                  >
+                    Signal
+                  </LinkPreview>{' '}
+                  to communicate with you over an encrypted channel.
                 </FormDescription>
               </FormItem>
             )}
@@ -118,7 +122,8 @@ export function ContactForm({ setOpen }: IProps) {
                 </FormControl>
                 <FormMessage />
                 <FormDescription className="-mt-0.5 text-neutral-500">
-                  List all the competitors you are interested in separated by commas.
+                  List all the competitors you are interested in separated by
+                  commas.
                 </FormDescription>
               </FormItem>
             )}
@@ -196,12 +201,19 @@ export function ContactForm({ setOpen }: IProps) {
             )}
           />
           <Button
-            variant="outline"
-            type="submit"
-            className="w-full text-neutral-100 text-sm border-neutral-100 bg-neutral-900"
+            borderRadius="0.5rem"
+            containerClassName="w-full"
+            className="rounded-lg bg-neutral-800 text-neutral-100 border-2 border-neutral-800"
           >
             Submit
           </Button>
+          {/*<Button*/}
+          {/*  variant="outline"*/}
+          {/*  type="submit"*/}
+          {/*  className="w-full text-neutral-100 text-sm border-neutral-100 bg-neutral-900"*/}
+          {/*>*/}
+          {/*  Submit*/}
+          {/*</Button>*/}
         </fieldset>
       </form>
     </Form>
