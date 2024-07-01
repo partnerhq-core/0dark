@@ -11,9 +11,9 @@ import { TextGenerateEffect } from '@/components/ui/text-generate'
 
 export function Services() {
   return (
-    <div className="max-w-5xl w-full mx-auto mb-24 grid gap-24 px-6">
-      <ServicesGrid />
+    <div className="max-w-5xl px-6 w-full mx-auto mb-24 grid gap-24">
       <WhatDoYouDo />
+      <ServicesGrid />
     </div>
   )
 }

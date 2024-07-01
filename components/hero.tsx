@@ -18,7 +18,7 @@ export function Hero() {
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 0.3,
+            delay: 0.2,
             duration: 0.8,
             ease: 'easeInOut',
           }}
@@ -39,8 +39,7 @@ export function Hero() {
             for you.
           </div>
           {/*<div className="text-xl font-semibold tracking-normal text-neutral-500 grid gap-3 mx-auto">*/}
-          {/*  Beat the competition by acquiring codebases, data sets, or insider*/}
-          {/*  knowledge anonymously.*/}
+          {/*  Zero Dark: corporate espionage as a service*/}
           {/*</div>*/}
           <div className="mt-2 flex flex-col justify-self-start items-center gap-y-3 gap-x-4 mx-auto">
             <Action />

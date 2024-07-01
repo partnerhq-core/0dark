@@ -31,9 +31,8 @@ export default function Home() {
     <div>
       {/*<FloatingNav navItems={navItems} />*/}
       <Hero />
-      <AboutUs />
-      {/*<ActionBlock />*/}
       <Services />
+      <AboutUs />
       <ActionBlock />
       <Process />
       <ActionBlock />

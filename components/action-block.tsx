@@ -7,8 +7,8 @@ export function ActionBlock() {
       <div className=" w-full relative">
         <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-neutral-500 to-slate-500 transform scale-[0.80] bg-red-500 rounded-full blur-2xl" />
         <div className="relative shadow-xl bg-neutral-900 border border-neutral-700 px-8 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
-          <div className="flex flex-col sm:flex-row sm:justify-between w-full items-center">
-            <h1 className="font-semibold text-2xl text-neutral-100 relative z-50">
+          <div className="flex flex-col sm:flex-row sm:justify-between w-full items-center gap-4">
+            <h1 className="text-center font-semibold text-2xl text-neutral-100 relative z-50">
               Ready to grow your business?
             </h1>
             <Action />

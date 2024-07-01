@@ -41,7 +41,7 @@ export const BentoGridItem = ({
       )}
     >
       <div className="group-hover/bento:-translate-y-1 transition duration-200">
-        <div className="flex justify-center mb-2">{icon}</div>
+        <div className="flex justify-center -mt-2 mb-2">{icon}</div>
         <div className="text-base text-center font-bold text-neutral-200">
           {title}
         </div>
