@@ -11,11 +11,7 @@ export function AboutUs() {
 function WhoAreWe() {
   return (
     <div>
-      <TextGenerateEffect words="Who are you?" className="mb-6" />
-      <TextGenerateEffect
-        words="Zero Dark: corporate espionage as a service."
-        className="font-semibold text-neutral-500 tracking-normal mb-2"
-      />
+      <TextGenerateEffect words="Our Team" className="mb-6" />
       <TextGenerateEffect
         words="Team of 5 based in the SF bay area."
         className="font-semibold text-neutral-500 tracking-normal mb-2"

@@ -30,9 +30,22 @@ import { TextGenerateEffect } from '@/components/ui/text-generate'
 
 export function Services() {
   return (
-    <div className="max-w-5xl px-6 w-full mx-auto mb-24 grid gap-24">
+    <div className="max-w-5xl px-6 w-full mx-auto mb-24 grid gap-20">
+      <WhatIsZeroDark />
       <WhatDoYouDo />
       <ServicesGrid />
+    </div>
+  )
+}
+
+function WhatIsZeroDark() {
+  return (
+    <div>
+      <TextGenerateEffect words="What is Zero Dark?" className="mb-6" />
+      <TextGenerateEffect
+        words="Consulting firm that provides corporate espionage as a service."
+        className="font-semibold text-neutral-500 tracking-normal"
+      />
     </div>
   )
 }

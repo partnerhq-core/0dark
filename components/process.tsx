@@ -11,7 +11,7 @@ export function Process() {
   return (
     <div className="pb-36 pl-2">
       <div className="max-w-5xl px-6 mx-auto mb-10">
-        <TextGenerateEffect words="What is the process?" />
+        <TextGenerateEffect words="Our Process" />
       </div>
       <TracingBeam className="px-6">
         <div className="pt-1.5 pl-4 max-w-3xl mx-auto antialiased relative">
@@ -57,7 +57,7 @@ const STEPS = [
     description: (
       <p>
         A call will be scheduled to identify your needs as a business.
-        Correspondence will be through Signal an encrypted communication
+        Correspondence will occur through Signal, an encrypted communication
         channel.
       </p>
     ),
