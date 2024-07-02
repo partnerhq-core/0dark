@@ -13,6 +13,7 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { cn } from '@/lib/utils'
 
 import {
   Dialog,
@@ -24,15 +25,21 @@ import {
 } from './ui/dialog'
 import { Button } from './ui/moving-border'
 
-export function Action() {
+interface IProps {
+  trigger?: React.ReactNode
+}
+
+export function Action(props: IProps) {
   const [open, setOpen] = useState(false)
   const isDesktop = useMedia('(min-width: 768px)')
   const title = 'Submit a Request'
   const description = 'Zero Dark: Corporate espionage as a service'
-  const trigger = (
+  const trigger = props.trigger || (
     <Button
       borderRadius="0.5rem"
-      className="rounded-lg bg-neutral-800 text-neutral-100 border-2 border-neutral-800"
+      className={cn(
+        'rounded-lg bg-neutral-800 text-neutral-100 border-2 border-neutral-800',
+      )}
     >
       Submit a Request
     </Button>

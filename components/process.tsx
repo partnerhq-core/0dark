@@ -57,7 +57,8 @@ const STEPS = [
     description: (
       <p>
         A call will be scheduled to identify your needs as a business.
-        Correspondence will be through Signal an encrypted communication channel.
+        Correspondence will be through Signal an encrypted communication
+        channel.
       </p>
     ),
   },

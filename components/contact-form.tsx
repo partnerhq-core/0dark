@@ -26,12 +26,12 @@ interface IProps {
 }
 
 const Schema = z.object({
-  contact: z.string(),
-  competitor: z.string(),
+  contact: z.string().min(1, { message: 'Phone number is required.' }),
+  competitor: z.string().optional(),
   services: z
     .array(z.string())
     .min(1, { message: 'Select at least 1 service.' }),
-  budget: z.string(),
+  budget: z.string().optional(),
   additional: z.string().optional(),
 })
 
@@ -69,6 +69,7 @@ export function ContactForm({ setOpen }: IProps) {
         },
       ])
       setOpen(false)
+      form.reset()
       toast.success('Request submitted. We will be in touch within 24 hours.')
       return true
     } catch (err) {

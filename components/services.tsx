@@ -42,7 +42,7 @@ function WhatDoYouDo() {
     <div>
       <TextGenerateEffect words="Why use Zero Dark?" className="mb-6" />
       <TextGenerateEffect
-        words="Trade secrets unlock business growth, but are risky to acquire."
+        words="Trade secrets unlock business growth."
         className="font-semibold text-neutral-500 tracking-normal"
       />
       <TextGenerateEffect

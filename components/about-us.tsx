@@ -21,7 +21,7 @@ function WhoAreWe() {
         className="font-semibold text-neutral-500 tracking-normal mb-2"
       />
       <TextGenerateEffect
-        words="We are founders, engineers, and consultants from Stanford, MIT, and Yale who have raised $10M+ from a16z, YCombinator, and General Catalyst."
+        words="We are founders, engineers, and ex-consultants from Stanford, MIT, and Yale who have raised $10M+ from a16z, YCombinator, and General Catalyst."
         className="font-semibold text-neutral-500 tracking-normal"
       />
     </div>
