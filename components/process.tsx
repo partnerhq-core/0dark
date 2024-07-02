@@ -56,8 +56,8 @@ const STEPS = [
     badge: '30 minutes',
     description: (
       <p>
-        A call will be schedule to identify your needs as a business.
-        Coordination will through Signal an encrypted communication channel.
+        A call will be scheduled to identify your needs as a business.
+        Correspondence will be through Signal an encrypted communication channel.
       </p>
     ),
   },
