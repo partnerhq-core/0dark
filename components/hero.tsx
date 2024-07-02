@@ -22,7 +22,7 @@ export function Hero() {
             duration: 0.8,
             ease: 'easeInOut',
           }}
-          className="from-neutral-300 to-neutral-500 bg-clip-text gap-y-6 flex flex-col justify-self-center max-w-2xl text-center mx-auto"
+          className="from-neutral-300 to-neutral-500 bg-clip-text gap-y-6 flex flex-col justify-self-center max-w-3xl text-center mx-auto"
         >
           <div className="mb-4 flex justify-start w-full">
             <Image
@@ -31,7 +31,7 @@ export function Hero() {
               className="w-12 h-12 mx-auto"
             />
           </div>
-          <div className="text-4xl font-semibold tracking-normal text-neutral-500">
+          <div className="text-5xl font-semibold tracking-normal text-neutral-500">
             We acquire your{' '}
             <span className="font-bold text-neutral-50">
               competition's trade secrets

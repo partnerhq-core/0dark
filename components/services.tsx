@@ -50,7 +50,7 @@ function WhatDoYouDo() {
         className="font-semibold text-neutral-500 tracking-normal"
       />
       <TextGenerateEffect
-        words="We offer these same inaccessible services to businesses with a more experienced and capable team."
+        words="We offer these inaccessible services to businesses with a more experienced and capable team."
         className="font-semibold text-neutral-500 tracking-normal"
       />
     </div>

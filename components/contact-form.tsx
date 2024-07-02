@@ -123,8 +123,8 @@ export function ContactForm({ setOpen }: IProps) {
                 </FormControl>
                 <FormMessage />
                 <FormDescription className="-mt-0.5 text-neutral-500">
-                  List all the competitors you are interested in separated by
-                  commas.
+                  List all the competitors you are interested in acquiring trade
+                  secrets from separated by commas.
                 </FormDescription>
               </FormItem>
             )}

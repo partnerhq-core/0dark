@@ -24,7 +24,7 @@ export const Navbar = ({ className }: IProps) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              'w-full flex inset-x-0 border-b sm:border border-white/[0.2] sm:rounded-full bg-neutral-800 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] px-4 sm:px-6 py-3 items-center justify-between bg-transparent backdrop-blur-3xl',
+              'w-full flex inset-x-0 border-b sm:border border-white/[0.2] sm:rounded-xl bg-neutral-800 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] px-4 sm:px-6 py-3 items-center justify-between bg-transparent backdrop-blur-3xl',
               className,
             )}
           >
