@@ -56,9 +56,9 @@ export function Hero() {
         <div className="max-w-7xl px-6 w-full mx-auto grid grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="col-span-2 max-w-2xl flex items-center h-full">
             <div className="grid gap-y-8 items-center -mt-24">
-              <div className="mb-4 flex justify-start w-full">
-                <Image src={Logo} alt="zero dark logo" className="w-12 h-12" />
-              </div>
+              {/*<div className="mb-4 flex justify-start w-full">*/}
+              {/*  <Image src={Logo} alt="zero dark logo" className="w-12 h-12" />*/}
+              {/*</div>*/}
               <div className="text-4xl font-semibold tracking-normal text-neutral-500">
                 We acquire your{' '}
                 <span className="font-bold text-neutral-100">
