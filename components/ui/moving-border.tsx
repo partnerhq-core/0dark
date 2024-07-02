@@ -34,7 +34,7 @@ export function Button({
   return (
     <Component
       className={cn(
-        'bg-transparent relative text-xl h-12 w-48 p-[2px] animate-shimmer overflow-hidden ',
+        'bg-transparent relative text-xl h-12 w-40 p-[2px] animate-shimmer overflow-hidden ',
         containerClassName,
       )}
       style={{ borderRadius }}
