@@ -37,9 +37,7 @@ export function Button({
         'bg-transparent relative text-xl h-12 w-48 p-[2px] animate-shimmer overflow-hidden ',
         containerClassName,
       )}
-      style={{
-        borderRadius: borderRadius,
-      }}
+      style={{ borderRadius }}
       {...otherProps}
     >
       <div

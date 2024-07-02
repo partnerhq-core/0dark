@@ -1,3 +1,5 @@
+'use client'
+
 import {
   IconBrain,
   IconCloudComputing,
@@ -5,8 +7,25 @@ import {
   IconFileBroken,
   IconTable,
 } from '@tabler/icons-react'
+import { useState } from 'react'
+import { useMedia } from 'react-use'
 
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { TextGenerateEffect } from '@/components/ui/text-generate'
 
 export function Services() {
@@ -23,15 +42,15 @@ function WhatDoYouDo() {
     <div>
       <TextGenerateEffect words="Why use Zero Dark?" className="mb-6" />
       <TextGenerateEffect
-        words="Trade secrets unlock business growth."
+        words="Trade secrets unlock business growth, but are risky to acquire."
         className="font-semibold text-neutral-500 tracking-normal"
       />
       <TextGenerateEffect
-        words="Fortune 500 companies protect their brand by hiring firms like McKinsey and Bain to collect trade secrets, proprietary data sets, and reverse engineer systems from their competitors."
+        words="Fortune 500 companies protect their brand by hiring consulting firms like McKinsey and Bain to collect trade secrets, proprietary data sets, and reverse engineer systems from their competitors."
         className="font-semibold text-neutral-500 tracking-normal"
       />
       <TextGenerateEffect
-        words="We offer these same services to businesses who do not have access to these resources with a more experienced and capable team."
+        words="We offer these same inaccessible services to businesses with a more experienced and capable team."
         className="font-semibold text-neutral-500 tracking-normal"
       />
     </div>
@@ -40,50 +59,95 @@ function WhatDoYouDo() {
 
 function ServicesGrid() {
   return (
-    <div>
+    <div className="relative">
       <TextGenerateEffect words="Our Services" className="mb-6" />
       <BentoGrid className="max-w-5xl mx-auto">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            header={item.header}
-            icon={item.icon}
-            className={i === 3 || i === 6 ? 'md:col-span-2' : ''}
-          />
+        {services.map((item, i) => (
+          <Service key={i} {...item} />
         ))}
       </BentoGrid>
     </div>
   )
 }
 
-const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
-)
-const items = [
+const services = [
   {
     title: 'Reverse Engineer Systems',
-    header: <Skeleton />,
     icon: <IconCloudComputing className="h-5 w-5 text-neutral-200" />,
   },
   {
     title: 'Discover Trade Secrets',
-    header: <Skeleton />,
     icon: <IconFileBroken className="h-5 w-5 text-neutral-200" />,
   },
   {
     title: 'Extract Insider Knowledge',
-    header: <Skeleton />,
     icon: <IconBrain className="h-5 w-5 text-neutral-200" />,
   },
   {
     title: 'Access Proprietary Datasets',
-    header: <Skeleton />,
     icon: <IconTable className="h-5 w-5 text-neutral-200" />,
+    className: 'md:col-span-2',
   },
   {
     title: 'Access Proprietary Codebases',
-    header: <Skeleton />,
     icon: <IconCode className="h-5 w-5 text-neutral-200" />,
   },
 ]
+
+interface IServiceProps {
+  title: string
+  icon: React.ReactNode
+  className?: string
+}
+
+function Service(props: IServiceProps) {
+  const [open, setOpen] = useState(false)
+  const isDesktop = useMedia('(min-width: 768px)')
+  const trigger = (
+    // <div onClick={() => setOpen(true)} className={props.className}>
+    <BentoGridItem
+      title={props.title}
+      icon={props.icon}
+      className={props.className}
+    />
+    // </div>
+  )
+
+  if (isDesktop) {
+    return (
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>{trigger}</DialogTrigger>
+        <DialogContent className="bg-neutral-900 text-neutral-100 border-none">
+          <DialogHeader className="mt-2 mb-2">
+            <DialogTitle className="font-bold tracking-normal">
+              {props.title}
+            </DialogTitle>
+            {/*<DialogDescription className="text-neutral-500 text-sm tracking-normal font-semibold mt-1">*/}
+            {/*  {description}*/}
+            {/*</DialogDescription>*/}
+          </DialogHeader>
+          {/*<ContactForm setOpen={setOpen} />*/}
+        </DialogContent>
+      </Dialog>
+    )
+  } else {
+    return (
+      <Drawer open={open} onOpenChange={setOpen}>
+        <DrawerTrigger asChild>{trigger}</DrawerTrigger>
+        <DrawerContent className="bg-neutral-900 text-neutral-100 border-none">
+          <DrawerHeader className="mt-2">
+            <DrawerTitle className="font-bold tracking-normal">
+              {props.title}
+            </DrawerTitle>
+            {/*<DrawerDescription className="text-neutral-500 text-sm tracking-normal font-semibold mt-1">*/}
+            {/*  {description}*/}
+            {/*</DrawerDescription>*/}
+          </DrawerHeader>
+          <ScrollArea className="mb-6 px-6 py-6 h-full overflow-y-scroll">
+            {/*<ContactForm setOpen={setOpen} />*/}
+          </ScrollArea>
+        </DrawerContent>
+      </Drawer>
+    )
+  }
+}

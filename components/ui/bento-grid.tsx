@@ -1,13 +1,11 @@
 import { EvervaultCard } from '@/components/ui/evervault-card'
 import { cn } from '@/lib/utils'
 
-export const BentoGrid = ({
-  className,
-  children,
-}: {
+interface IGridProps {
   className?: string
   children?: React.ReactNode
-}) => {
+}
+export const BentoGrid = ({ className, children }: IGridProps) => {
   return (
     <div
       className={cn(
@@ -20,23 +18,17 @@ export const BentoGrid = ({
   )
 }
 
-export const BentoGridItem = ({
-  className,
-  title,
-  description,
-  header,
-  icon,
-}: {
+interface IItemProps {
   className?: string
   title?: string | React.ReactNode
-  description?: string | React.ReactNode
-  header?: React.ReactNode
   icon?: React.ReactNode
-}) => {
+}
+
+export const BentoGridItem = ({ className, title, icon }: IItemProps) => {
   return (
     <EvervaultCard
       className={cn(
-        'row-span-1 rounded-2xl p-2 group/bento hover:shadow-xl transition duration-200 shadow-none bg-neutral-800 border-white/[0.2] border justify-between flex flex-col space-y-4',
+        'cursor-pointer row-span-1 rounded-3xl p-1 group/bento transition duration-200',
         className,
       )}
     >

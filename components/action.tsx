@@ -28,7 +28,7 @@ export function Action() {
   const [open, setOpen] = useState(false)
   const isDesktop = useMedia('(min-width: 768px)')
   const title = 'Submit a Request'
-  const description = '0 Dark: Corporate espionage as a service'
+  const description = 'Zero Dark: Corporate espionage as a service'
   const trigger = (
     <Button
       borderRadius="0.5rem"

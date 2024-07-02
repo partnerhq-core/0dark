@@ -2,6 +2,7 @@
 
 import {
   motion,
+  useMotionValue,
   useScroll,
   useSpring,
   useTransform,
@@ -33,20 +34,15 @@ export const TracingBeam = ({
     }
   }, [])
 
-  const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
-    {
-      stiffness: 500,
-      damping: 90,
-    },
-  )
-  const y2 = useSpring(
-    useTransform(scrollYProgress, [0, 1], [50, svgHeight - 200]),
-    {
-      stiffness: 500,
-      damping: 90,
-    },
-  )
+  const progress = useMotionValue(50)
+  const y1 = useSpring(useTransform(progress, [0, 0.8], [50, svgHeight]), {
+    stiffness: 500,
+    damping: 90,
+  })
+  const y2 = useSpring(useTransform(progress, [0, 1], [50, svgHeight - 200]), {
+    stiffness: 500,
+    damping: 90,
+  })
 
   return (
     <motion.div
@@ -93,9 +89,7 @@ export const TracingBeam = ({
             fill="none"
             stroke="#9091A0"
             strokeOpacity="0.16"
-            transition={{
-              duration: 10,
-            }}
+            transition={{ duration: 10 }}
           ></motion.path>
           <motion.path
             d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
@@ -103,9 +97,7 @@ export const TracingBeam = ({
             stroke="url(#gradient)"
             strokeWidth="1.25"
             className="motion-reduce:hidden"
-            transition={{
-              duration: 10,
-            }}
+            transition={{ duration: 10 }}
           ></motion.path>
           <defs>
             <motion.linearGradient
@@ -123,6 +115,33 @@ export const TracingBeam = ({
             </motion.linearGradient>
           </defs>
         </svg>
+        <motion.div
+          transition={{
+            duration: 0.2,
+            delay: 0.5,
+          }}
+          animate={{
+            boxShadow:
+              scrollYProgress.get() > 0
+                ? 'none'
+                : 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+          }}
+          className="ml-[9px] h-4 w-4 rounded-full border border-netural-200 shadow-sm flex items-center justify-center"
+        >
+          <motion.div
+            transition={{
+              duration: 0.2,
+              delay: 0.5,
+            }}
+            animate={{
+              backgroundColor:
+                scrollYProgress.get() > 0 ? 'white' : 'var(--sky-500)',
+              borderColor:
+                scrollYProgress.get() > 0 ? 'white' : 'var(--sky-600)',
+            }}
+            className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
+          />
+        </motion.div>
       </div>
       <div ref={contentRef}>{children}</div>
     </motion.div>

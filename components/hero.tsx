@@ -70,7 +70,7 @@ export function Hero() {
               {/*  Beat the competition by acquiring codebases, data sets, or*/}
               {/*  insider knowledge anonymously.*/}
               {/*</div>*/}
-              <div className="mt-2 flex justify-self-start items-center gap-y-3 gap-x-4">
+              <div className="mt-2 flex flex-col w-fit items-center gap-y-3 gap-x-4">
                 <Action />
                 <div className="text-neutral-500 text-xs font-semibold tracking-normal">
                   Min Contract: $25,000

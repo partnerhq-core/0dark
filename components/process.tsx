@@ -9,7 +9,7 @@ import { TracingBeam } from './ui/tracing-beam'
 
 export function Process() {
   return (
-    <div className="pb-36">
+    <div className="pb-36 pl-2">
       <div className="max-w-5xl px-6 mx-auto mb-10">
         <TextGenerateEffect words="What is the process?" />
       </div>

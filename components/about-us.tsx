@@ -17,7 +17,7 @@ function WhoAreWe() {
         className="font-semibold text-neutral-500 tracking-normal mb-2"
       />
       <TextGenerateEffect
-        words="Team of 5. 50+ years of work experience. Based in the SF bay area."
+        words="Team of 5 based in the SF bay area."
         className="font-semibold text-neutral-500 tracking-normal mb-2"
       />
       <TextGenerateEffect
