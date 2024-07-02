@@ -42,15 +42,15 @@ function WhatDoYouDo() {
     <div>
       <TextGenerateEffect words="Why use Zero Dark?" className="mb-6" />
       <TextGenerateEffect
-        words="Trade secrets unlock business growth."
+        words="Trade secrets fuel business growth."
         className="font-semibold text-neutral-500 tracking-normal"
       />
       <TextGenerateEffect
-        words="Fortune 500 companies protect their brand by hiring consulting firms like McKinsey and Bain to collect trade secrets, proprietary data sets, and reverse engineer systems from their competitors."
+        words="Fortune 500 companies hire top consulting firms like McKinsey and Bain to gather trade secrets from their competitors to protect their brand."
         className="font-semibold text-neutral-500 tracking-normal"
       />
       <TextGenerateEffect
-        words="We offer these inaccessible services to businesses with a more experienced and capable team."
+        words="We provide these services with an even more experienced, capable, and discrete team."
         className="font-semibold text-neutral-500 tracking-normal"
       />
     </div>
@@ -102,7 +102,7 @@ interface IServiceProps {
 
 function Service(props: IServiceProps) {
   const [open, setOpen] = useState(false)
-  const isDesktop = useMedia('(min-width: 768px)')
+  const isDesktop = useMedia('(min-width: 768px)', true)
   const trigger = (
     // <div onClick={() => setOpen(true)} className={props.className}>
     <BentoGridItem

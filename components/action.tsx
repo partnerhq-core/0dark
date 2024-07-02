@@ -31,7 +31,7 @@ interface IProps {
 
 export function Action(props: IProps) {
   const [open, setOpen] = useState(false)
-  const isDesktop = useMedia('(min-width: 768px)')
+  const isDesktop = useMedia('(min-width: 768px)', true)
   const title = 'Submit a Request'
   const description = 'Zero Dark: Corporate espionage as a service'
   const trigger = props.trigger || (
