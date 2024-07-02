@@ -7,7 +7,7 @@ import { useMedia } from 'react-use'
 
 import { Action } from '@/components/action'
 import { LampContainer } from '@/components/ui/lamp'
-import Logo from '@/public/favicon.svg'
+import Logo from '@/public/icon.svg'
 
 export function Hero() {
   const isDesktop = useMedia('(min-width: 768px)', true)

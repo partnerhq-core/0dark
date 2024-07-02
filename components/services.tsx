@@ -59,7 +59,7 @@ function WhatDoYouDo() {
 
 function ServicesGrid() {
   return (
-    <div className="relative">
+    <div className="relative" id="services">
       <TextGenerateEffect words="Our Services" className="mb-6" />
       <BentoGrid className="max-w-5xl mx-auto">
         {services.map((item, i) => (

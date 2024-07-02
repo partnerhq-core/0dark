@@ -2,7 +2,7 @@ import { TextGenerateEffect } from '@/components/ui/text-generate'
 
 export function AboutUs() {
   return (
-    <div className="max-w-5xl px-6 w-full mx-auto mb-24 grid gap-24">
+    <div className="max-w-5xl px-6 w-full mx-auto mb-24 grid gap-24" id="about">
       <WhoAreWe />
     </div>
   )

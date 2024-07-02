@@ -1,11 +1,6 @@
 'use client'
 
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-} from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -13,13 +8,13 @@ import React from 'react'
 import { Action } from '@/components/action'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import Logo from '@/public/favicon.svg'
+import Logo from '@/public/icon.svg'
 
 interface IProps {
   className?: string
 }
 
-export const FloatingNav = ({ className }: IProps) => {
+export const Navbar = ({ className }: IProps) => {
   return (
     <div className="fixed top-0 sm:top-4 w-full z-30">
       <div className="max-w-5xl mx-auto w-full px-0 sm:px-6">
@@ -40,14 +35,14 @@ export const FloatingNav = ({ className }: IProps) => {
               <Image src={Logo} alt="logo" className="h-8 w-8" />
               <span className="hidden md:block">Zero Dark</span>
             </Link>
-            <div className="">
+            <div>
               <Action
                 trigger={
                   <Button
                     size="sm"
                     className={cn(
                       'bg-neutral-800 p-3 py-2 text-neutral-200 font-normal text-sm',
-                      'hover:animate-shimmer hover:bg-[linear-gradient(110deg,#171717,45%,#262626,55%,#171717)] bg-[length:200%_100%] transition-colors',
+                      'hover:animate-shimmer hover:bg-[linear-gradient(110deg,#262626,45%,#171717,55%,#262626)] bg-[length:200%_100%] transition-colors',
                     )}
                   >
                     Submit a Request
