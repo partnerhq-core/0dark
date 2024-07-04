@@ -13,7 +13,7 @@ export function Process() {
       <div className="max-w-5xl px-6 mx-auto mb-10">
         <TextGenerateEffect words="Our Process" />
       </div>
-      <TracingBeam className="px-6">
+      <TracingBeam className="px-6 md:px-0">
         <div className="pt-1.5 pl-4 max-w-3xl mx-auto antialiased relative">
           <div className="flex flex-col gap-10 sm:gap-20">
             {STEPS.map((step, index) => (
